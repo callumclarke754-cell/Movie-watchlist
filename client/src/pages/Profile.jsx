@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
-
-const API = "http://localhost:5000/api";
+import API from "../api";
 
 export default function Profile() {
   const { token, user } = useAuth();

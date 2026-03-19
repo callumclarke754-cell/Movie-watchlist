@@ -3,8 +3,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import MovieCard from "./MovieCard";
 import TMDBSearch from "./TMDBSearch";
-
-const API = "http://localhost:5000/api";
+import API from "../api";
 const GENRES = ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Romance", "Thriller", "Animation", "Documentary", "Other"];
 
 export default function WatchlistPage({ type }) {

@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API from "../api";
 
 export default function MovieCard({ movie, onUpdate, onDelete, featured = false }) {
   const { token } = useAuth();
-  const API = "http://localhost:5000/api";
 
   async function toggleWatched() {
     try {

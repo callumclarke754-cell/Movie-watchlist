@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
-
-const API = "http://localhost:5000/api";
+import API from "../api";
 
 function greeting(name) {
   const h = new Date().getHours();

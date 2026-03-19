@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
+import API from "../api";
 
 export default function TMDBSearch({ type, onSelect, onClose }) {
   const { token } = useAuth();
@@ -16,7 +17,7 @@ export default function TMDBSearch({ type, onSelect, onClose }) {
     setSearched(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/tmdb/search?query=${encodeURIComponent(query)}&type=${type === "Movie" ? "movie" : "tv"}`,
+        `${API}/tmdb/search?query=${encodeURIComponent(query)}&type=${type === "Movie" ? "movie" : "tv"}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setResults(res.data);
